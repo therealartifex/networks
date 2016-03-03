@@ -1,5 +1,15 @@
 #!/usr/bin/python
 
+# Brian Scott
+# Programming Assignment 3 / "Tiny SMTP Client"
+# COSC 3603-01 / "Networks and Data Communications"
+# 
+# This is a very simple SMTP client
+# written in Python. It uses TLS through
+# Microsoft's SMTP service.
+
+# Development environment: vim on CentOS 7
+
 import ssl
 import base64
 from socket import *
@@ -7,6 +17,7 @@ from getpass import *
 
 buf = 4096
 m = raw_input('Message: ')
+r = raw_input("Recipient: ")
 s = socket(AF_INET, SOCK_STREAM)
 l = raw_input('Login: ')
 p = getpass()
@@ -31,7 +42,7 @@ print ss.recv(buf)
 
 ss.sendall('mail from:<linux.usaf@live.com>\r\n')
 print ss.recv(buf)
-ss.sendall('rcpt to:<linux.usaf@gmail.com>\r\n')
+ss.sendall('rcpt to:<'+r+'>\r\n')
 print ss.recv(buf)
 ss.sendall('data\r\n')
 print ss.recv(buf)
