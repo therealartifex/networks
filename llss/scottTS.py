@@ -24,10 +24,17 @@ s=socket(AF_INET,SOCK_DGRAM)
 sw=(argv[1],int(argv[2]))
 
 d={}
+mac=[]
 with open(argv[3]) as f:
   for l in f:
     (k,v)=l.split()
     d[k]=int(v)
+    mac.append(k)
 
 while 1:
-  
+  wt=random.randrange(1,ival)
+  rmac1=mac[random.randrange(0,len(mac)-1)]
+  rmac2=mac[random.randrange(0,len(mac)-1)]
+  sleep(wt)
+  frame=str(d[rmac1])+' '+rmac1+' '+rmac2
+  print frame
