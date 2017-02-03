@@ -8,7 +8,7 @@
 # This program is a simple TCP web server
 # written in Ruby, using sockets programming.
 #
-# Development Environmant: vim on CentOS 7
+# Development Environment: vim on CentOS 7
 
 require 'socket'
 require 'uri'
