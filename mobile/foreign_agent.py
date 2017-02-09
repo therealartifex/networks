@@ -14,6 +14,8 @@ import sys
 from socket import *
 from signal import *
 
+global mn_reg=0
+
 s=socket(AF_INET,SOCK_DGRAM)
 s.bind(('',8000))
 
