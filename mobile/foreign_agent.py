@@ -5,7 +5,7 @@
 # Assignment 3 - Mobile IP Simulation
 # foreign_agent.py
 
-# This bla bla bla
+# This simulates a foreign agent in a mobile IP scenario
 
 # Developed on Kali Linux 2
 # Status: in development
