@@ -11,7 +11,7 @@ sock.bind(('', 7000))
 mobileNodes = {}
 
 while 1:
-	messageRecv = socket.recvfrom(1024)
+	messageRecv = sock.recvfrom(1024)
 	message = messageRecv.split()
 	if(message[0] == "0"):
 		print "Shutting down"
