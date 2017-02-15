@@ -23,13 +23,13 @@ while 1:
 		print "Message from mobile node: " + messageRecv1[1]
 	
 	options = raw_input("Chose either (1) Send a message or (2) shutdown: ")
-	if(options == "1" || options == "send a message"):
+	if(options == "1" or options == "send a message"):
 		message = raw_input("Enter your message: ")
 		sock.sendto(str(5) + " " + correspondentIP + " " + homeIP + " " + message, (homeIP, homePort))
 		messageRecv2 = sock.recvfrom(1024).split()
 		if(messageRecv2[0] == "6"):
 			print "No mobile node with " + messageRecv2[1] + " is registered with the Home agent."
-	if(options == "2" || options == "shutdown"):
+	if(options == "2" or options == "shutdown"):
 		sock.sendto(str(0), (homeIP, homePort))
 		break
 sock.close()

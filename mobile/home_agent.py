@@ -26,4 +26,3 @@ while 1:
 		else:
 			sock.sendto(str(6) + " " + message[2], (message[1], 6000)
 sock.close()
-			
