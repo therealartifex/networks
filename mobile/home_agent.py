@@ -24,5 +24,5 @@ while 1:
 		if(mobileNodes.has_key(message[2])):
 			sock.sendto(str(7) + " " + message[1] + " " + mobileNodes[message[2]]+ " " + message[3], (mobileNodes[message[2]], 8000))
 		else:
-			sock.sendto(str(6) + " " + message[2], (message[1], 6000)
+			sock.sendto(str(6) + " " + message[2], (message[1], 6000))
 sock.close()
