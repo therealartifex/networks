@@ -14,6 +14,7 @@ correspondentIP = sys.argv[2]
 
 #port for the correspondent to listen on
 correspondentPort = 6000
+homePort = 7000
 
 while 1:
 	socket.settimeout()
@@ -24,11 +25,11 @@ while 1:
 	options = raw_input("Chose either (1) Send a message or (2) shutdown: ")
 	if(options == "1" || "send a message"):
 		message = raw_input("Enter your message: ")
-		socket.sendto(str(5) + " " + correspondentIP + " " + homeIP + " " + message)
+		socket.sendto(str(5) + " " + correspondentIP + " " + homeIP + " " + message, (homeIP, homePort))
 		messageRecv2 = socket.recvfrom(1024).split()
 		if(messageRecv2[0] == "6"):
 			print "No mobile node with " + messageRecv2[1] + " is registered with the Home agent."
 	if(options == "2" || options == "shutdown"):
-		socket.sendto(str(0))
+		socket.sendto(str(0), (homeIP, homePort))
 		break
 socket.close()
