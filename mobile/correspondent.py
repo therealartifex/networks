@@ -23,7 +23,7 @@ while 1:
 		print "Message from mobile node: " + messageRecv1[1]
 	
 	options = raw_input("Chose either (1) Send a message or (2) shutdown: ")
-	if(options == "1" || "send a message"):
+	if(options == "1" || options == "send a message"):
 		message = raw_input("Enter your message: ")
 		sock.sendto(str(5) + " " + correspondentIP + " " + homeIP + " " + message, (homeIP, homePort))
 		messageRecv2 = sock.recvfrom(1024).split()
