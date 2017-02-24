@@ -43,5 +43,5 @@ while 1:
   rmac2=mac[random.randrange(0,len(mac)-1)]
   sleep(wt)
   traf=str(d[rmac1])+' '+rmac1+' '+rmac2+'\n'
-  s.sendto(traf,sw)
+  s.sendto(traf.strip(),sw)
   print traf.strip()
